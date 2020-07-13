@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.chenguoyu.cloud.system.mapper.RoleResourceRelationMapper">
+    <resultMap id="BaseResultMap" type="org.chenguoyu.cloud.system.model.po.RoleResourceRelation">
+        <!--@mbg.generated-->
+        <!--@Table role_resource_relation-->
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="role_id" jdbcType="BIGINT" property="roleId"/>
+        <result column="resource_id" jdbcType="BIGINT" property="resourceId"/>
+        <result column="create_user_id" jdbcType="BIGINT" property="createUserId"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_user_id" jdbcType="BIGINT" property="updateUserId"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        id, role_id, resource_id, create_user_id, create_time, update_user_id, update_time
+    </sql>
+    <select id="findResourcesByRoleIds" resultType="org.chenguoyu.cloud.system.model.po.Resource">
+        select *
+        from resource
+                     inner join role_resource_relation on resource.id = role_resource_relation.resource_id
+                     inner join role on role.id = role_resource_relation.role_id
+                where role_id in
+        <foreach collection="roleIds" open="(" separator="," close=")" item="item">
+            #{item,jdbcType=BIGINT}
+        </foreach>
+    </select>
+</mapper>

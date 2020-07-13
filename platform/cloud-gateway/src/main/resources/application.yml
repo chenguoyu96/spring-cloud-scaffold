@@ -1,0 +1,40 @@
+spring:
+  #jwt密码
+  security:
+    oauth2:
+      jwt:
+        signingKey: 123456
+  cloud:
+    gateway:
+      routes:
+        - id: uua
+          uri: lb://uua
+          predicates:
+            - Path=/uua/**
+          filters:
+            - StripPrefix=1
+
+feign:
+  sentinel:
+    enabled: true
+  okhttp:
+    enabled: true
+
+#网关白名单，无需要签权url
+gate:
+  ignore:
+    authentication:
+      startWith: /oauth,/open,/v2/api-docs
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+logging:
+  level:
+    org.chenguoyu.cloud: debug
+  path: logs/
+  file:
+    max-size: 1GB
