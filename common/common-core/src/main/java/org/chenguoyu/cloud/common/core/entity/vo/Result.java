@@ -2,6 +2,7 @@ package org.chenguoyu.cloud.common.core.entity.vo;
 
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import lombok.Data;
 import org.chenguoyu.cloud.common.core.exception.ErrorType;
 import org.chenguoyu.cloud.common.core.exception.SystemErrorType;
 import io.swagger.annotations.ApiModel;
@@ -15,6 +16,7 @@ import java.time.ZonedDateTime;
   * @author 陈国钰 on 2020-7-8.
   * @version 1.0
   */
+@Data
 @ApiModel(value = "Result", description = "返回结果封装")
 public class Result<T> {
     public static final Integer SUCCESSFUL_CODE = 200;
@@ -107,44 +109,5 @@ public class Result<T> {
         this.message = message;
         this.data = data;
         this.time = ZonedDateTime.now().toInstant();
-    }
-    public Integer getCode() {
-        return code;
-    }
-
-    public void setCode(Integer code) {
-        this.code = code;
-    }
-
-    public boolean isSuccess() {
-        return success;
-    }
-
-    public void setSuccess(boolean success) {
-        this.success = success;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public T getData() {
-        return data;
-    }
-
-    public Instant getTime() {
-        return time;
-    }
-
-    public void setTime(Instant time) {
-        this.time = time;
-    }
-
-    public void setData(T data) {
-        this.data = data;
     }
 }
