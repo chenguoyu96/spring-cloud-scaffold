@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
-  * 
-  * @author 陈国钰 on 2020-7-12.
-  * @version 1.0
-  */
+ *
+ * @author 陈国钰 on 2020-7-12.
+ * @version 1.0
+ */
 @FeignClient("system")
 public interface UserServiceClient {
     /**

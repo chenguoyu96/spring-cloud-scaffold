@@ -4,13 +4,16 @@ spring:
     oauth2:
       jwt:
         signingKey: 123456
+      resourceserver:
+        jwt:
+          jwk-set-uri: 'http://localhost:8443/uaa/.well-known/jwks.json'
   cloud:
     gateway:
       routes:
         - id: uua
-          uri: lb://uua
+          uri: lb://uaa
           predicates:
-            - Path=/uua/**
+            - Path=/uaa/**
           filters:
             - StripPrefix=1
 
@@ -31,10 +34,8 @@ management:
     web:
       exposure:
         include: '*'
-
 logging:
   level:
     org.chenguoyu.cloud: debug
-  path: logs/
   file:
     max-size: 1GB

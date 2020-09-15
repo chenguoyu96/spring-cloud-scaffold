@@ -10,10 +10,10 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 /**
-  * 
-  * @author 陈国钰 on 2020-7-8.
-  * @version 1.0
-  */
+ *
+ * @author 陈国钰 on 2020-7-8.
+ * @version 1.0
+ */
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired

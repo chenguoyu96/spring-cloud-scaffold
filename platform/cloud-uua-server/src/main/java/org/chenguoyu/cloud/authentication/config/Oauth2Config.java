@@ -1,6 +1,7 @@
 package org.chenguoyu.cloud.authentication.config;
 
 
+import com.zaxxer.hikari.HikariDataSource;
 import org.chenguoyu.cloud.authentication.exception.CustomWebResponseExceptionTranslator;
 import org.chenguoyu.cloud.authentication.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,12 +30,13 @@ import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
 import java.util.Arrays;
+import java.util.Collections;
 
 /**
-  * 授权服务器配置
-  * @author 陈国钰 on 2020-7-10.
-  * @version 1.0
-  */
+ *授权服务器配置
+ * @author 陈国钰 on 2020-7-10.
+ * @version 1.0
+ */
 @Configuration
 @Component
 @EnableAuthorizationServer
@@ -60,7 +62,7 @@ public class Oauth2Config extends AuthorizationServerConfigurerAdapter {
      * @return
      */
     @Bean
-    public ClientDetailsService clientDetailsService(DataSource dataSource) {
+    public ClientDetailsService clientDetailsService(HikariDataSource dataSource) {
         ClientDetailsService clientDetailsService = new JdbcClientDetailsService(dataSource);
         ((JdbcClientDetailsService) clientDetailsService).setPasswordEncoder(passwordEncoder);
         return clientDetailsService;
@@ -90,7 +92,7 @@ public class Oauth2Config extends AuthorizationServerConfigurerAdapter {
         service.setTokenStore(tokenStore);//令牌存储策略
         //令牌增强
         TokenEnhancerChain tokenEnhancerChain = new TokenEnhancerChain();
-        tokenEnhancerChain.setTokenEnhancers(Arrays.asList(accessTokenConverter));
+        tokenEnhancerChain.setTokenEnhancers(Collections.singletonList(accessTokenConverter));
         service.setTokenEnhancer(tokenEnhancerChain);
 
         service.setAccessTokenValiditySeconds(7200); // 令牌默认有效期2小时
@@ -104,7 +106,7 @@ public class Oauth2Config extends AuthorizationServerConfigurerAdapter {
      * @return JdbcAuthorizationCodeServices
      */
     @Bean
-    protected AuthorizationCodeServices authorizationCodeServices(DataSource dataSource) {
+    protected AuthorizationCodeServices authorizationCodeServices(HikariDataSource dataSource) {
         // 授权码存储等处理方式类，使用jdbc，操作oauth_code表
         return new JdbcAuthorizationCodeServices(dataSource);
     }

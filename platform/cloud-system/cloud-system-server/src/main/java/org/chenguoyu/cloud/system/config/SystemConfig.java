@@ -7,10 +7,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
-  * 
-  * @author 陈国钰 on 2020-7-9.
-  * @version 1.0
-  */
+ *
+ * @author 陈国钰 on 2020-7-9.
+ * @version 1.0
+ */
 @Configuration
 public class SystemConfig {
     @Bean

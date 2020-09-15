@@ -9,10 +9,10 @@ import java.util.Date;
 import java.util.TimeZone;
 
 /**
-  * 
-  * @author 陈国钰 on 2020-7-9.
-  * @version 1.0
-  */
+ *
+ * @author 陈国钰 on 2020-7-9.
+ * @version 1.0
+ */
 public class LocalDateTimeUtils {
     public static final DateTimeFormatter YYYY_MM_DD_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd");
     public static final DateTimeFormatter YYYY_MM_DD_HH_MM_SS_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");

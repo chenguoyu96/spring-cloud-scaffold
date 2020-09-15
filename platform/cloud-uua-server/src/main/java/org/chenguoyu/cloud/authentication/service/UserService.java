@@ -11,10 +11,10 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
-  * 
-  * @author 陈国钰 on 2020-7-8.
-  * @version 1.0
-  */
+ *
+ * @author 陈国钰 on 2020-7-8.
+ * @version 1.0
+ */
 public interface UserService extends UserDetailsService {
     default Set<GrantedAuthority> obtainGrantedAuthorities(User user) {
         if (CollectionUtils.isNotEmpty(user.getResourceCodes())) {

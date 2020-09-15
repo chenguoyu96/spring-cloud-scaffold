@@ -7,10 +7,10 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 /**
-  * 
-  * @author 陈国钰 on 2020-7-9.
-  * @version 1.0
-  */
+ *
+ * @author 陈国钰 on 2020-7-9.
+ * @version 1.0
+ */
 @Setter
 @Getter
 public class BaseParam {

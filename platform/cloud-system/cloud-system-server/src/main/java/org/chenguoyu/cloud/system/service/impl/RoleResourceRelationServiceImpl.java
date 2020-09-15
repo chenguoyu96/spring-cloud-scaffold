@@ -11,10 +11,10 @@ import org.springframework.stereotype.Service;
 import java.util.Set;
 
 /**
-  * 
-  * @author 陈国钰 on 2020-7-9.
-  * @version 1.0
-  */
+ *
+ * @author 陈国钰 on 2020-7-9.
+ * @version 1.0
+ */
 @Service
 public class RoleResourceRelationServiceImpl extends ServiceImpl<RoleResourceRelationMapper, RoleResourceRelation> implements RoleResourceRelationService {
     @Autowired

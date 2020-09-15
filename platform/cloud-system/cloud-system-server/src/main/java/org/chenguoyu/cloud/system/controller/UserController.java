@@ -17,10 +17,10 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 /**
-  * 
-  * @author 陈国钰 on 2020-7-9.
-  * @version 1.0
-  */
+ *
+ * @author 陈国钰 on 2020-7-9.
+ * @version 1.0
+ */
 @RestController
 @RequestMapping("/user")
 public class UserController implements UserServiceClient {
@@ -32,7 +32,7 @@ public class UserController implements UserServiceClient {
     @ApiImplicitParam(name = "userForm", value = "新增用户form表单", required = true, dataType = "UserForm")
     @PostMapping("/add")
     public Result<Void> add(@Valid @RequestBody UserForm userForm) {
-        log.debug("name:{}", userForm);
+        log.debug("user:{}", userForm);
         User user = userForm.toPo(User.class);
         userService.add(user);
         return Result.success();
@@ -47,5 +47,16 @@ public class UserController implements UserServiceClient {
         log.debug("query with username or mobile:{}", uniqueId);
         User user = userService.getByUniqueId(uniqueId);
         return Result.success(user);
+    }
+
+    @GetMapping("/queryById")
+    public Result<User> queryById(@RequestParam Long id){
+        return Result.success(userService.getById(id));
+    }
+
+    @PostMapping("/edit")
+    public Result<Void> edit(@Valid @RequestBody UserForm userForm){
+
+        return Result.success();
     }
 }

@@ -25,10 +25,10 @@ import java.time.format.DateTimeFormatter;
 import java.util.TimeZone;
 
 /**
-  * 
-  * @author 陈国钰 on 2020-7-9.
-  * @version 1.0
-  */
+ *
+ * @author 陈国钰 on 2020-7-9.
+ * @version 1.0
+ */
 @Configuration
 public class JacksonConfig {
 

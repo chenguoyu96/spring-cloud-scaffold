@@ -1,10 +1,10 @@
 package org.chenguoyu.cloud.common.core.util;
 
 /**
-  * 
-  * @author 陈国钰 on 2020-7-11.
-  * @version 1.0
-  */
+ *
+ * @author 陈国钰 on 2020-7-11.
+ * @version 1.0
+ */
 public class UserContext {
     private Long id;
     private String name;

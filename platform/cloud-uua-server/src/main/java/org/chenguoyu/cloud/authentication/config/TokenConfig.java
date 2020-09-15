@@ -8,10 +8,10 @@ import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenCo
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
 /**
-  * 
-  * @author 陈国钰 on 2020-7-11.
-  * @version 1.0
-  */
+ *
+ * @author 陈国钰 on 2020-7-11.
+ * @version 1.0
+ */
 @Configuration
 public class TokenConfig {
     /**

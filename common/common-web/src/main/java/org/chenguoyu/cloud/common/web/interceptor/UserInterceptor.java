@@ -11,10 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
-  * 用户信息拦截器
-  * @author 陈国钰 on 2020-7-8.
-  * @version 1.0
-  */
+ *用户信息拦截器
+ * @author 陈国钰 on 2020-7-8.
+ * @version 1.0
+ */
 public class UserInterceptor implements HandlerInterceptor {
     private final Logger log = LoggerFactory.getLogger(UserInterceptor.class);
     /**

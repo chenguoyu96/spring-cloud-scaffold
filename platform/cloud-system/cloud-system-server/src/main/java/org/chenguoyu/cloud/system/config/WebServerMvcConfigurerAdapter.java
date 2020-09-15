@@ -8,10 +8,10 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
-  * 
-  * @author 陈国钰 on 2020-7-8.
-  * @version 1.0
-  */
+ *
+ * @author 陈国钰 on 2020-7-8.
+ * @version 1.0
+ */
 @Configuration
 public class WebServerMvcConfigurerAdapter implements WebMvcConfigurer {
     @Bean

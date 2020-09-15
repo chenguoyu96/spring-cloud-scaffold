@@ -10,10 +10,10 @@ import lombok.NoArgsConstructor;
 import org.chenguoyu.cloud.common.web.entity.po.BasePo;
 
 /**
-  * 
-  * @author 陈国钰 on 2020-7-9.
-  * @version 1.0
-  */
+ *
+ * @author 陈国钰 on 2020-7-9.
+ * @version 1.0
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

@@ -4,10 +4,10 @@ package org.chenguoyu.cloud.system.exception;
 import org.chenguoyu.cloud.common.core.exception.ErrorType;
 
 /**
-  * 
-  * @author 陈国钰 on 2020-7-9.
-  * @version 1.0
-  */
+ *
+ * @author 陈国钰 on 2020-7-9.
+ * @version 1.0
+ */
 public enum SystemManagerErrorType implements ErrorType {
     USER_NOT_FOUND(30100, "用户未找到！"),
     ROLE_NOT_FOUND(30200, "角色未找到！");

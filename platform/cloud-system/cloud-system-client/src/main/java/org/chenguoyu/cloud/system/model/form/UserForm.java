@@ -13,10 +13,10 @@ import javax.validation.constraints.NotBlank;
 import java.util.Set;
 
 /**
-  * 
-  * @author 陈国钰 on 2020-7-9.
-  * @version 1.0
-  */
+ *
+ * @author 陈国钰 on 2020-7-9.
+ * @version 1.0
+ */
 @Data
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor

@@ -1,6 +1,6 @@
 package org.chenguoyu.cloud.gateway.filter;
 
-import com.alibaba.nacos.client.utils.JSONUtils;
+import cn.hutool.json.JSONUtil;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.core.Ordered;
@@ -21,10 +21,10 @@ import java.util.List;
 import java.util.Map;
 
 /**
-  * 
-  * @author 陈国钰 on 2020-7-11.
-  * @version 1.0
-  */
+ *
+ * @author 陈国钰 on 2020-7-11.
+ * @version 1.0
+ */
 public class AuthFilter  implements GatewayFilter, Ordered {
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
@@ -51,10 +51,10 @@ public class AuthFilter  implements GatewayFilter, Ordered {
         //向headers中放文件，记得build
         ServerHttpRequest request = null;
         try {
-            request = exchange.getRequest().mutate().header("x-client-token-user", JSONUtils.serializeObject(jsonToken)).build();
+            request = exchange.getRequest().mutate().header("x-client-token-user", JSONUtil.toJsonStr(jsonToken)).build();
             //将现在的request 变成 exchange对象
             return chain.filter(exchange.mutate().request(request).build());
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);

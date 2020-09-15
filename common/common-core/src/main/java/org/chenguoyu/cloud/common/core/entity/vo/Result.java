@@ -12,10 +12,10 @@ import java.time.Instant;
 import java.time.ZonedDateTime;
 
 /**
-  * 
-  * @author 陈国钰 on 2020-7-8.
-  * @version 1.0
-  */
+ *
+ * @author 陈国钰 on 2020-7-8.
+ * @version 1.0
+ */
 @Data
 @ApiModel(value = "Result", description = "返回结果封装")
 public class Result<T> {

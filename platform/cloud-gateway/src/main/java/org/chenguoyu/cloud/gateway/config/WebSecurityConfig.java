@@ -10,10 +10,10 @@ import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.web.server.SecurityWebFilterChain;
 
 /**
-  * 
-  * @author 陈国钰 on 2020-7-11.
-  * @version 1.0
-  */
+ *
+ * @author 陈国钰 on 2020-7-11.
+ * @version 1.0
+ */
 @EnableWebFluxSecurity
 public class WebSecurityConfig {
 

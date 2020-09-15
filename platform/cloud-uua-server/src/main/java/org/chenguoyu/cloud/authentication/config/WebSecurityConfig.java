@@ -15,10 +15,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
-  * 安全规则配置
-  * @author 陈国钰 on 2020-7-10.
-  * @version 1.0
-  */
+ *安全规则配置
+ * @author 陈国钰 on 2020-7-10.
+ * @version 1.0
+ */
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
